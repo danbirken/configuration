@@ -1,0 +1,6 @@
+(if
+(is (application_name) "TkDiff 4.1.4")
+	(begin
+		(geometry "2274x1352+1316+108")
+	)
+)
