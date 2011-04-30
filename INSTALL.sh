@@ -10,10 +10,11 @@ mkdir -p ~/.vimundo
 mv ~/.gvimrc /tmp/.gvimrc-$TIMESTAMP
 cp ./vim/.gvimrc ~/.gvimrc
 
-mv ~/.vim /tmp/.vim-$TIMESTAMP
-mkdir ~/.vim
-cp -r ./vim/.vim/* ~/.vim
+rsync -vaz vim/.vim/ ~/.vim
 
 # Install xterm configuration file
 mv ~/.Xdefaults /tmp/.Xdefaults-$TIMESTAMP
 cp ./xterm/.Xdefaults ~/.Xdefaults
+
+# Install bash_scripts
+rsync -vaz bash_scripts/ ~/bash_scripts
