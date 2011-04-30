@@ -1,0 +1,28 @@
+#!/bin/bash
+
+export OLD_XTERM_BG_COLOR=`xtermcontrol --get-bg`
+export OLD_XTERM_FG_COLOR=`xtermcontrol --get-fg`
+export OLD_XTERM_COLOR4=`xtermcontrol --get-color4`
+
+xtermcontrol --color4=#00E0E0
+
+# color4 is directory in SSHed ls
+# color5 is filename in SSHed ls
+
+if [[ "$@" =~ (gearshift|crushinator|destructor) ]]; then
+    xtermcontrol --bg=#440000 --fg=#FFEEFF --color4=#00E0E0
+fi
+
+if [[ "$@" =~ boxy ]]; then
+    xtermcontrol --bg=#000066 --fg=#EEFFFF --color4=#00E0E0
+fi
+
+if [[ "$@" =~ (calculon|donbot|clamps) ]]; then
+    xtermcontrol --bg=#004400 --fg=#FFFFEE --color4=#00E0E0
+fi
+
+ssh $@
+
+xtermcontrol --bg=$OLD_XTERM_BG_COLOR
+xtermcontrol --fg=$OLD_XTERM_FG_COLOR
+xtermcontrol --color4=$OLD_XTERM_COLOR4

@@ -98,4 +98,28 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# Use vim as the default editor
+export EDITOR='vim'
+# Use vi navigation around bash
+set -o vi
+
 `~/bash_scripts/keyring_socket_finder.py`
+
+function gp() { `~/bash_scripts/git_helper.py $*`; }
+function up() { `~/bash_scripts/up.py $*`; }
+function gra() { grep -R "$*" * }
+
+alias nl='~/bash_scripts/nested_load.py'
+alias fsr='~/bash_scripts/file_search_replace.py'
+
+# Some alias for some common git commands
+alias tkgit='git difftool --tool=tkdiff'
+alias tkc='tkgit --cached'
+alias mld='git difftool --tool=meld'
+alias gitp='git pull --rebase'
+
+# Slow down SCP so as not to break our cable internet for everybody
+alias scp='scp -l 8000'
+
+# Have ssh go through the colorizer
+alias ssh='~/bash_scripts/ssh_colorizer'
