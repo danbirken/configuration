@@ -12,8 +12,8 @@ cp ./vim/.gvimrc ~/.gvimrc
 rsync -vaz vim/.vim/ ~/.vim
 
 # Install xterm configuration file
-mv ~/.Xdefaults /tmp/.Xdefaults-$TIMESTAMP
-cp ./xterm/.Xdefaults ~/.Xdefaults
+mv ~/.Xresources /tmp/.Xresources-$TIMESTAMP
+cp ./xterm/.Xresources ~/.Xresources
 
 # Install bash_scripts
 rsync -vaz bash_scripts/ ~/bash_scripts
