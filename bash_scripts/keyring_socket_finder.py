@@ -18,5 +18,5 @@ for directory in os.listdir('/tmp'):
         ))
 
 keyring_dirs.sort()
-print 'export SSH_AUTH_SOCK=' + keyring_dirs[0][1] + '/socket.ssh'
-os.symlink(keyring_dirs[0][1] + '/socket.ssh', '/tmp/ssh_auth_sock')
+print 'export SSH_AUTH_SOCK=' + keyring_dirs[0][1] + '/ssh'
+os.symlink(keyring_dirs[0][1] + '/ssh', '/tmp/ssh_auth_sock')
