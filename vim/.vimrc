@@ -30,7 +30,6 @@ set noswapfile
 
 " We want an undo file so undo/redos are saved in another file
 set undofile
-set undodir=~/.vimundo/    " undo files
 
 syntax on
 
