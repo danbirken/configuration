@@ -24,3 +24,9 @@ rsync -vaz devilspie/ ~/.devilspie
 # Install bashrc
 mv ~/.bashrc /tmp/.bashrc-$TIMESTAMP
 cp ./bash/.bashrc ~/.bashrc
+
+# Install global gitignore
+mv ~/.gitignore /tmp/.gitignore-$TIMESTAMP
+cp ./git/.gitignore ~/.gitignore
+git config --global core.excludesfile ~/.gitignore
+
