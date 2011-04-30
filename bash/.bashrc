@@ -107,15 +107,15 @@ set -o vi
 
 function gp() { `~/bash_scripts/git_helper.py $*`; }
 function up() { `~/bash_scripts/up.py $*`; }
-function gra() { grep -R "$*" * }
+function gra() { grep -R "$*" *; }
 
 alias nl='~/bash_scripts/nested_load.py'
 alias fsr='~/bash_scripts/file_search_replace.py'
 
 # Some alias for some common git commands
-alias tkgit='git difftool --tool=tkdiff'
+alias tkgit='git difftool --tool=tkdiff --no-prompt'
 alias tkc='tkgit --cached'
-alias mld='git difftool --tool=meld'
+alias mld='git difftool --tool=meld --no-prompt'
 alias gitp='git pull --rebase'
 
 # Slow down SCP so as not to break our cable internet for everybody
