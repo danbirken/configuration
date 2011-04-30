@@ -18,3 +18,10 @@ cp ./xterm/.Xdefaults ~/.Xdefaults
 
 # Install bash_scripts
 rsync -vaz bash_scripts/ ~/bash_scripts
+
+# Install devilspie config
+rsync -vaz devilspie/ ~/.devilspie
+
+# Install bashrc
+mv ~/.bashrc /tmp/.bashrc-$TIMESTAMP
+cp ./bash/.bashrc ~/.bashrc
