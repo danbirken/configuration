@@ -39,7 +39,7 @@ set ignorecase
 set smartcase
 
 " For whatever reason we use capital TAGS for our ctags files
-set tags=./TAGS
+set tags=./TAGS,TAGS
 
 " Shortcut for sorting in visual mode
 vmap <leader>s :sort<CR>
