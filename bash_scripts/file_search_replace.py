@@ -5,6 +5,10 @@ import sys
 import tempfile
 import shutil
 
+if len(sys.argv) < 3:
+    print 'Usage: fsr search replace file1 [file2]...'
+    sys.exit(0)
+
 search = sys.argv[1]
 replace = sys.argv[2]
 files = sys.argv[3:]
