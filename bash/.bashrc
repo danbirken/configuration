@@ -107,7 +107,7 @@ set -o vi
 
 function gp() { `~/bash_scripts/git_helper.py $*`; }
 function up() { `~/bash_scripts/up.py $*`; }
-function gra() { grep -R "$*" *; }
+function gra() { grep --exclude TAGS --exclude *.un~ -R "$*" *; }
 
 alias nl='~/bash_scripts/nested_load.py'
 alias fsr='~/bash_scripts/file_search_replace.py'
