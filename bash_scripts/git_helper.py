@@ -6,8 +6,6 @@ import subprocess
 import sys
 import time
 
-import x_utils
-
 import termcolor
 
 args = sys.argv[1:]
@@ -96,16 +94,11 @@ else:
                 shell=True).communicate()
     elif command == 'g':
         for filename in file_list:
-            open_geometry = x_utils.find_open_geometry()
             output = subprocess.Popen(
-                'gvim %s --echo-wid' % (filename),
+                'gvim %s' % (filename),
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 shell=True)
-            window_id = output.stdout.readline()[5:].strip()
-            x_utils.add_window_id(window_id)
-            time.sleep(.5)
-            x_utils.move_window(window_id, open_geometry)
     elif command == 'a':
         subprocess.Popen(
                 '/usr/bin/git add %s' % (' '.join(file_list)),
