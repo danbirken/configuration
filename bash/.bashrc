@@ -123,3 +123,5 @@ alias scp='scp -l 8000'
 
 # Have ssh go through the colorizer
 alias ssh='~/bash_scripts/ssh_colorizer'
+
+export PATH=$PATH:~/git-configuration/bin
