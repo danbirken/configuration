@@ -9,11 +9,11 @@ xtermcontrol --color4=#00E0E0
 # color4 is directory in SSHed ls
 # color5 is filename in SSHed ls
 
-if [[ "$@" =~ (gearshift|crushinator|destructor) ]]; then
+if [[ "$@" =~ (gearshift|crushinator|destructor|rusty|femputer|fatbot) ]]; then
     xtermcontrol --bg=#440000 --fg=#FFEEFF --color4=#00E0E0
 fi
 
-if [[ "$@" =~ boxy ]]; then
+if [[ "$@" =~ (boxy|frankie) ]]; then
     xtermcontrol --bg=#000066 --fg=#EEFFFF --color4=#00E0E0
 fi
 
