@@ -124,4 +124,6 @@ alias scp='scp -l 8000'
 # Have ssh go through the colorizer
 alias ssh='~/bash_scripts/ssh_colorizer'
 
+alias cru='~/clients/python2/thumbtack/tools/code_review_upload.py'
+
 export PATH=$PATH:~/git-configuration/bin
