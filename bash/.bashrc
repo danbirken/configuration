@@ -126,4 +126,6 @@ alias ssh='~/bash_scripts/ssh_colorizer'
 
 alias cru='~/clients/python2/thumbtack/tools/code_review_upload.py'
 
+function c() { `~/bash_scripts/client_mover.py $*`; }
+
 export PATH=$PATH:~/git-configuration/bin
