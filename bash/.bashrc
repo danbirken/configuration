@@ -107,7 +107,8 @@ set -o vi
 
 function gp() { `~/bash_scripts/git_helper.py $*`; }
 function up() { `~/bash_scripts/up.py $*`; }
-function gra() { grep --exclude TAGS --exclude *.un~ -R "$*" *; }
+function gra() { grep --color=always --exclude TAGS --exclude *.un~ -R "$*" * | cut -c1-100; }
+function grai() { grep --color=always -i --exclude TAGS --exclude *.un~ -R "$*" * | cut -c1-100; }
 
 alias nl='~/bash_scripts/nested_load.py'
 alias fsr='~/bash_scripts/file_search_replace.py'
@@ -124,7 +125,7 @@ alias scp='scp -l 8000'
 # Have ssh go through the colorizer
 alias ssh='~/bash_scripts/ssh_colorizer'
 
-alias cru='~/clients/python2/thumbtack/tools/code_review_upload.py'
+alias cru='~/clients/python3/thumbtack/tools/code_review_upload.py'
 
 function c() { `~/bash_scripts/client_mover.py $*`; }
 
