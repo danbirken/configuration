@@ -1,28 +1,21 @@
 #!/bin/bash
 
-export OLD_XTERM_BG_COLOR=`xtermcontrol --get-bg`
-export OLD_XTERM_FG_COLOR=`xtermcontrol --get-fg`
-export OLD_XTERM_COLOR4=`xtermcontrol --get-color4`
+if [ "$COLORTERM" = "roxterm" ]; then
+    if [[ "$@" =~ (gearshift|crushinator|destructor|rusty|femputer|fatbot) ]]; then
+        dbus-send --session /net/sf/roxterm/Options net.sf.roxterm.Options.SetColourScheme string:$ROXTERM_ID "string:red"
+    fi
 
-xtermcontrol --color4=#00E0E0
+    if [[ "$@" =~ (boxy|frankie) ]]; then
+        dbus-send --session /net/sf/roxterm/Options net.sf.roxterm.Options.SetColourScheme string:$ROXTERM_ID "string:blue"
+    fi
 
-# color4 is directory in SSHed ls
-# color5 is filename in SSHed ls
-
-if [[ "$@" =~ (gearshift|crushinator|destructor|rusty|femputer|fatbot) ]]; then
-    xtermcontrol --bg=#440000 --fg=#FFEEFF --color4=#00E0E0
-fi
-
-if [[ "$@" =~ (boxy|frankie) ]]; then
-    xtermcontrol --bg=#000066 --fg=#EEFFFF --color4=#00E0E0
-fi
-
-if [[ "$@" =~ (calculon|donbot|clamps) ]]; then
-    xtermcontrol --bg=#004400 --fg=#FFFFEE --color4=#00E0E0
+    if [[ "$@" =~ (calculon|donbot|clamps) ]]; then
+        xtermcontrol --bg=#004400 --fg=#FFFFEE --color4=#00E0E0
+    fi
 fi
 
 ssh $@
 
-xtermcontrol --bg=$OLD_XTERM_BG_COLOR
-xtermcontrol --fg=$OLD_XTERM_FG_COLOR
-xtermcontrol --color4=$OLD_XTERM_COLOR4
+if [ "$COLORTERM" = "roxterm" ]; then
+    dbus-send --session /net/sf/roxterm/Options net.sf.roxterm.Options.SetColourScheme string:$ROXTERM_ID "string:solarized-dark"
+fi

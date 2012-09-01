@@ -107,8 +107,8 @@ set -o vi
 
 function gp() { `~/bash_scripts/git_helper.py $*`; }
 function up() { `~/bash_scripts/up.py $*`; }
-function gra() { grep --color=always --exclude TAGS --exclude *.un~ -R "$*" * | cut -c1-100; }
-function grai() { grep --color=always -i --exclude TAGS --exclude *.un~ -R "$*" * | cut -c1-100; }
+function gra() { ack "$*"; }
+function grai() { ack -i "$*"; }
 
 alias nl='~/bash_scripts/nested_load.py'
 alias fsr='~/bash_scripts/file_search_replace.py'
@@ -130,3 +130,7 @@ alias cru='~/clients/python3/thumbtack/tools/code_review_upload.py'
 function c() { `~/bash_scripts/client_mover.py $*`; }
 
 export PATH=$PATH:~/git-configuration/bin
+
+if [ "$COLORTERM" = "roxterm" ]; then
+    dbus-send --session /net/sf/roxterm/Options net.sf.roxterm.Options.SetColourScheme string:$ROXTERM_ID "string:Tango"
+fi
