@@ -25,6 +25,10 @@ rsync -vaz devilspie/ ~/.devilspie
 mv ~/.bashrc /tmp/.bashrc-$TIMESTAMP
 cp ./bash/.bashrc ~/.bashrc
 
+# Install zshrc
+mv ~/.zshrc /tmp/.zshrc-$TIMESTAMP
+cp ./zsh/.zshrc ~/.zshrc
+
 # Install global gitignore
 mv ~/.gitignore /tmp/.gitignore-$TIMESTAMP
 cp ./git/.gitignore ~/.gitignore
