@@ -49,7 +49,7 @@ alias gitp='git pull --rebase'
 # Slow down SCP so as not to break our cable internet for everybody
 alias scp='scp -l 8000'
 
-alias cru='~/clients/python3/thumbtack/tools/code_review_upload.py'
+alias cru='/mnt/ssd/clients/python/thumbtack/tools/code_review_upload.py'
 
 function c() { `~/bash_scripts/client_mover.py $*`; }
 
