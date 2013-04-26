@@ -58,3 +58,5 @@ export PATH=$PATH:~/git-configuration/bin
 if [ "$ROXTERM_NUM" ]; then
     dbus-send --session /net/sf/roxterm/Options net.sf.roxterm.Options.SetColourScheme string:$ROXTERM_ID "string:Tango"
 fi
+
+setopt noextendedglob
