@@ -18,7 +18,6 @@ set autoindent
 filetype plugin on
 filetype indent on
 
-source ~/.vim/autoload/php.vim
 source ~/.vim/autoload/phpfolding.vim
 source ~/.vim/autoload/togglebg.vim
 source ~/.vim/autoload/color_helper.vim
@@ -83,3 +82,26 @@ autocmd FileType yaml setlocal expandtab shiftwidth=2 softtabstop=2
 " Use solarized color scheme
 colorscheme solarized
 set background=dark
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'tpope/vim-pathogen'
+Bundle 'gmarik/vundle'
+Bundle 'pangloss/vim-javascript'
+Bundle 'StanAngeloff/php.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'ervandew/supertab'
+Bundle 'wincent/Command-T'
+
+" Don't re-indent stuff after I press enter in insert mode
+set indentkeys-=*<Return>
+
+augroup ft_php
+    au!
+
+    autocmd FileType php setlocal indentkeys-=*<Return>
+augroup END
+
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': ['php'],
+                           \ 'passive_filetypes': ['python'] }
