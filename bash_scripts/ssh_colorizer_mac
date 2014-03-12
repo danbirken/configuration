@@ -25,7 +25,7 @@ EOF
 }
 
 if [[ "$@" =~ scruffy ]]; then
-  set_term_bgcolor 40 0 0
+  set_term_bgcolor 70 0 0
 fi
  
 ssh $@
