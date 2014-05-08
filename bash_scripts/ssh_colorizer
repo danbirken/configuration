@@ -8,10 +8,6 @@ if [ "$COLORTERM" = "roxterm" ]; then
     if [[ "$@" =~ (boxy|frankie) ]]; then
         dbus-send --session /net/sf/roxterm/Options net.sf.roxterm.Options.SetColourScheme string:$ROXTERM_ID "string:blue"
     fi
-
-    if [[ "$@" =~ (calculon|donbot|clamps) ]]; then
-        xtermcontrol --bg=#004400 --fg=#FFFFEE --color4=#00E0E0
-    fi
 fi
 
 ssh $@
