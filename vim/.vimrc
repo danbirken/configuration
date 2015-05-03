@@ -83,8 +83,8 @@ autocmd FileType yaml setlocal expandtab shiftwidth=2 softtabstop=2
 colorscheme solarized
 set background=dark
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 Bundle 'tpope/vim-pathogen'
 Bundle 'gmarik/vundle'
 Bundle 'pangloss/vim-javascript'
