@@ -69,6 +69,15 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
+map <MiddleMouse> <Nop>
+imap <MiddleMouse> <Nop>
+map <2-MiddleMouse> <Nop>
+imap <2-MiddleMouse> <Nop>
+map <3-MiddleMouse> <Nop>
+imap <3-MiddleMouse> <Nop>
+map <4-MiddleMouse> <Nop>
+imap <4-MiddleMouse> <Nop>
+
 " Shortcut for splitting screen to open new window
 nmap <leader>sn :vsp:<CR>:set columns=200<CR><C-W>=
 " Shortcut for equalizing screen sizes
@@ -79,10 +88,6 @@ nmap <leader>sj <C-W><C-W>
 " Updating indent preferences for YAML
 autocmd FileType yaml setlocal expandtab shiftwidth=2 softtabstop=2
 
-" Use solarized color scheme
-colorscheme solarized
-set background=dark
-
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Bundle 'tpope/vim-pathogen'
@@ -92,6 +97,7 @@ Bundle 'StanAngeloff/php.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'ervandew/supertab'
 Bundle 'wincent/Command-T'
+call vundle#end()
 
 " Don't re-indent stuff after I press enter in insert mode
 set indentkeys-=*<Return>
